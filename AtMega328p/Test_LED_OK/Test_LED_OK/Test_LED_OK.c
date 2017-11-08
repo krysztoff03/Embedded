@@ -18,14 +18,14 @@ int main(void)
 	lcd_clrscr();
 	char s1[] = "Testing LCD";
 	char s2[] = " OK";
+	
     while(1)
     {
         _delay_ms(1000);
-		lcd_home();
-		lcd_puts(s1);
-		_delay_ms(1000);
-		lcd_puts(s2);
-		_delay_ms(1000);
-		lcd_clrscr(); 
+	lcd_puts(s1);
+	_delay_ms(1000);
+	lcd_puts(s2);
+	_delay_ms(1000);
+	lcd_clrscr(); 
     }
 }
