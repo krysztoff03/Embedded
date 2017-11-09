@@ -5,6 +5,8 @@
  * When the distance measured is below 10cm, a red LED is on and off, a yellow LED is on and off for the
  * distance between 10 and 20cm, and a green LED for distances above 20cm.
  *
+ * A video can be found at https://www.youtube.com/watch?v=Pdrkqjr50Lo
+ *
  * Created: 11/9/2017 11:28:25 AM
  *  Author: crist
  */ 
