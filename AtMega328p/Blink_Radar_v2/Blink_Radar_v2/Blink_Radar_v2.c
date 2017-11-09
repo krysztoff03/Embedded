@@ -8,7 +8,7 @@
  * A video can be found at https://www.youtube.com/watch?v=Pdrkqjr50Lo
  *
  * Created: 11/9/2017 11:28:25 AM
- *  Author: crist
+ *  Author: cristi
  */ 
 
 #ifndef F_CPU
