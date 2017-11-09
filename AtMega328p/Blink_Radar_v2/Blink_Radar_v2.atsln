@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Blink_Radar_v2", "Blink_Radar_v2\Blink_Radar_v2.cproj", "{73E1587B-1076-4C46-B386-5B5A4EA031AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73E1587B-1076-4C46-B386-5B5A4EA031AB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{73E1587B-1076-4C46-B386-5B5A4EA031AB}.Debug|AVR.Build.0 = Debug|AVR
+		{73E1587B-1076-4C46-B386-5B5A4EA031AB}.Release|AVR.ActiveCfg = Release|AVR
+		{73E1587B-1076-4C46-B386-5B5A4EA031AB}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
