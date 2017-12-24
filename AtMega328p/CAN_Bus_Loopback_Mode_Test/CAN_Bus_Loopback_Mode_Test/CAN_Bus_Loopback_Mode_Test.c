@@ -1,5 +1,6 @@
 /*
  * CAN_Bus_Loopback_Mode_Test.c
+ * The tests were made with ATMega328p (2560) and MCP2515.
  *
  * Created: 12/24/2017 9:12:54 AM
  *  Author: Cristi
