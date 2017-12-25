@@ -49,7 +49,7 @@ int main(void)
 {
 	//Enable interrupts
 	sei();
-	//LCD initialization with display ON, cursor OFF, blink char
+	//LCD initialization with display ON, cursor OFF
 	lcd_init(LCD_DISP_ON);
 	//SPI initialization
 	spi_init();
