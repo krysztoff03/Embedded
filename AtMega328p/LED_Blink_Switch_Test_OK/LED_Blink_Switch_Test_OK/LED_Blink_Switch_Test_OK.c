@@ -29,6 +29,7 @@ int main(void)
 		//When the switch is active, turn on the LED which blinks with a 1 second delay
         if(!(PINC & (1 << PORTC0)))
 		{
+			//Value based on the formula Target Timer Count = (Input Frequency / (Prescaler * Target Frequency)) - 1
 			if(TCNT1 >= 62499)
 			{
 				//Toggle the LED
