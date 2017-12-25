@@ -26,7 +26,7 @@ int main(void)
 	
     while(1)
     {
-		//When the switch is active, turn on the LED with a 1 second delay
+		//When the switch is active, turn on the LED which blinks with a 1 second delay
         if(!(PINC & (1 << PORTC0)))
 		{
 			if(TCNT1 >= 62499)
