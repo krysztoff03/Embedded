@@ -61,7 +61,7 @@ int main(void)
 		//Set cursor on line 1
 		lcd_gotoxy(0, 0);
 		lcd_puts("Error CAN Bus");
-		//Set cursort on line 2
+		//Set cursor on line 2
 		lcd_gotoxy(0, 1);
 		lcd_puts("not initialized");
 	}
