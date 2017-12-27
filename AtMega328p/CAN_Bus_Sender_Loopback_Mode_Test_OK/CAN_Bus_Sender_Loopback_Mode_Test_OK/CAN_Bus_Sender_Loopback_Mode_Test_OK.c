@@ -95,7 +95,7 @@ int main(void)
 		//LCD clear screen
 		lcd_clrscr();
 		lcd_home();
-		//"Message write to buffer"
+		//"Message writenn to buffer"
 		lcd_puts("mess writ buff");
 	}
 	else
