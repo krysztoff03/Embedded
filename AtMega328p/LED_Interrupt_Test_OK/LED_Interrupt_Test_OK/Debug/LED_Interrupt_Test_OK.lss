@@ -1,0 +1,986 @@
+
+LED_Interrupt_Test_OK.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000e  00800100  000005f6  0000068a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000005f6  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000b  0080010e  0080010e  00000698  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000698  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000178  00000000  00000000  000006c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001218  00000000  00000000  00000840  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000671  00000000  00000000  00001a58  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000d70  00000000  00000000  000020c9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000314  00000000  00000000  00002e3c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000046a  00000000  00000000  00003150  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000ed9  00000000  00000000  000035ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000150  00000000  00000000  00004493  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	4c c0       	rjmp	.+152    	; 0x9e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	4a c0       	rjmp	.+148    	; 0x9e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	48 c0       	rjmp	.+144    	; 0x9e <__bad_interrupt>
+   e:	00 00       	nop
+  10:	46 c0       	rjmp	.+140    	; 0x9e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	2a c2       	rjmp	.+1108   	; 0x46a <__vector_5>
+  16:	00 00       	nop
+  18:	42 c0       	rjmp	.+132    	; 0x9e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	40 c0       	rjmp	.+128    	; 0x9e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3e c0       	rjmp	.+124    	; 0x9e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	3c c0       	rjmp	.+120    	; 0x9e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	3a c0       	rjmp	.+116    	; 0x9e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	38 c0       	rjmp	.+112    	; 0x9e <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	36 c0       	rjmp	.+108    	; 0x9e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	34 c0       	rjmp	.+104    	; 0x9e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	32 c0       	rjmp	.+100    	; 0x9e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	30 c0       	rjmp	.+96     	; 0x9e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2e c0       	rjmp	.+92     	; 0x9e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	2c c0       	rjmp	.+88     	; 0x9e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	2a c0       	rjmp	.+84     	; 0x9e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	28 c0       	rjmp	.+80     	; 0x9e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	26 c0       	rjmp	.+76     	; 0x9e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	24 c0       	rjmp	.+72     	; 0x9e <__bad_interrupt>
+  56:	00 00       	nop
+  58:	22 c0       	rjmp	.+68     	; 0x9e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	20 c0       	rjmp	.+64     	; 0x9e <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	1e c0       	rjmp	.+60     	; 0x9e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	1c c0       	rjmp	.+56     	; 0x9e <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 ef       	ldi	r30, 0xF6	; 246
+  7c:	f5 e0       	ldi	r31, 0x05	; 5
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	ae 30       	cpi	r26, 0x0E	; 14
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	ae e0       	ldi	r26, 0x0E	; 14
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a9 31       	cpi	r26, 0x19	; 25
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	06 d2       	rcall	.+1036   	; 0x4a8 <main>
+  9c:	aa c2       	rjmp	.+1364   	; 0x5f2 <_exit>
+
+0000009e <__bad_interrupt>:
+  9e:	b0 cf       	rjmp	.-160    	; 0x0 <__vectors>
+
+000000a0 <i2c_init>:
+*************************************************************************/
+unsigned char i2c_rep_start(unsigned char address)
+{
+    return i2c_start( address );
+
+}/* i2c_rep_start */
+  a0:	10 92 b9 00 	sts	0x00B9, r1
+  a4:	88 e4       	ldi	r24, 0x48	; 72
+  a6:	80 93 b8 00 	sts	0x00B8, r24
+  aa:	08 95       	ret
+
+000000ac <i2c_start>:
+  ac:	94 ea       	ldi	r25, 0xA4	; 164
+  ae:	90 93 bc 00 	sts	0x00BC, r25
+  b2:	ec eb       	ldi	r30, 0xBC	; 188
+  b4:	f0 e0       	ldi	r31, 0x00	; 0
+  b6:	90 81       	ld	r25, Z
+  b8:	99 23       	and	r25, r25
+  ba:	ec f7       	brge	.-6      	; 0xb6 <i2c_start+0xa>
+  bc:	90 91 b9 00 	lds	r25, 0x00B9
+  c0:	98 7f       	andi	r25, 0xF8	; 248
+  c2:	98 30       	cpi	r25, 0x08	; 8
+  c4:	11 f0       	breq	.+4      	; 0xca <i2c_start+0x1e>
+  c6:	90 31       	cpi	r25, 0x10	; 16
+  c8:	a1 f4       	brne	.+40     	; 0xf2 <i2c_start+0x46>
+  ca:	80 93 bb 00 	sts	0x00BB, r24
+  ce:	84 e8       	ldi	r24, 0x84	; 132
+  d0:	80 93 bc 00 	sts	0x00BC, r24
+  d4:	ec eb       	ldi	r30, 0xBC	; 188
+  d6:	f0 e0       	ldi	r31, 0x00	; 0
+  d8:	80 81       	ld	r24, Z
+  da:	88 23       	and	r24, r24
+  dc:	ec f7       	brge	.-6      	; 0xd8 <i2c_start+0x2c>
+  de:	90 91 b9 00 	lds	r25, 0x00B9
+  e2:	98 7f       	andi	r25, 0xF8	; 248
+  e4:	98 31       	cpi	r25, 0x18	; 24
+  e6:	39 f0       	breq	.+14     	; 0xf6 <i2c_start+0x4a>
+  e8:	81 e0       	ldi	r24, 0x01	; 1
+  ea:	90 34       	cpi	r25, 0x40	; 64
+  ec:	29 f4       	brne	.+10     	; 0xf8 <i2c_start+0x4c>
+  ee:	80 e0       	ldi	r24, 0x00	; 0
+  f0:	08 95       	ret
+  f2:	81 e0       	ldi	r24, 0x01	; 1
+  f4:	08 95       	ret
+  f6:	80 e0       	ldi	r24, 0x00	; 0
+  f8:	08 95       	ret
+
+000000fa <i2c_stop>:
+ Terminates the data transfer and releases the I2C bus
+*************************************************************************/
+void i2c_stop(void)
+{
+    /* send stop condition */
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+  fa:	84 e9       	ldi	r24, 0x94	; 148
+  fc:	80 93 bc 00 	sts	0x00BC, r24
+	
+	// wait until stop condition is executed and bus released
+	while(TWCR & (1<<TWSTO));
+ 100:	ec eb       	ldi	r30, 0xBC	; 188
+ 102:	f0 e0       	ldi	r31, 0x00	; 0
+ 104:	80 81       	ld	r24, Z
+ 106:	84 fd       	sbrc	r24, 4
+ 108:	fd cf       	rjmp	.-6      	; 0x104 <i2c_stop+0xa>
+
+}/* i2c_stop */
+ 10a:	08 95       	ret
+
+0000010c <i2c_write>:
+unsigned char i2c_write( unsigned char data )
+{	
+    uint8_t   twst;
+    
+	// send data to the previously addressed device
+	TWDR = data;
+ 10c:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 110:	84 e8       	ldi	r24, 0x84	; 132
+ 112:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 116:	ec eb       	ldi	r30, 0xBC	; 188
+ 118:	f0 e0       	ldi	r31, 0x00	; 0
+ 11a:	80 81       	ld	r24, Z
+ 11c:	88 23       	and	r24, r24
+ 11e:	ec f7       	brge	.-6      	; 0x11a <i2c_write+0xe>
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+ 120:	90 91 b9 00 	lds	r25, 0x00B9
+ 124:	98 7f       	andi	r25, 0xF8	; 248
+	if( twst != TW_MT_DATA_ACK) return 1;
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	98 32       	cpi	r25, 0x28	; 40
+ 12a:	09 f4       	brne	.+2      	; 0x12e <i2c_write+0x22>
+ 12c:	80 e0       	ldi	r24, 0x00	; 0
+	return 0;
+
+}/* i2c_write */
+ 12e:	08 95       	ret
+
+00000130 <lcd_read>:
+
+    while ( (c = pgm_read_byte(progmem_s++)) ) {
+        lcd_putc(c);
+    }
+
+}/* lcd_puts_p */
+ 130:	cf 93       	push	r28
+ 132:	88 23       	and	r24, r24
+ 134:	31 f0       	breq	.+12     	; 0x142 <lcd_read+0x12>
+ 136:	80 91 0e 01 	lds	r24, 0x010E
+ 13a:	81 60       	ori	r24, 0x01	; 1
+ 13c:	80 93 0e 01 	sts	0x010E, r24
+ 140:	05 c0       	rjmp	.+10     	; 0x14c <lcd_read+0x1c>
+ 142:	80 91 0e 01 	lds	r24, 0x010E
+ 146:	8e 7f       	andi	r24, 0xFE	; 254
+ 148:	80 93 0e 01 	sts	0x010E, r24
+ 14c:	80 91 0e 01 	lds	r24, 0x010E
+ 150:	82 60       	ori	r24, 0x02	; 2
+ 152:	80 93 0e 01 	sts	0x010E, r24
+ 156:	60 91 0e 01 	lds	r22, 0x010E
+ 15a:	80 e0       	ldi	r24, 0x00	; 0
+ 15c:	fd d1       	rcall	.+1018   	; 0x558 <pcf8574_setoutput>
+ 15e:	62 e0       	ldi	r22, 0x02	; 2
+ 160:	80 e0       	ldi	r24, 0x00	; 0
+ 162:	41 d2       	rcall	.+1154   	; 0x5e6 <pcf8574_setoutputpinhigh>
+ 164:	00 c0       	rjmp	.+0      	; 0x166 <lcd_read+0x36>
+ 166:	64 e0       	ldi	r22, 0x04	; 4
+ 168:	80 e0       	ldi	r24, 0x00	; 0
+ 16a:	df d1       	rcall	.+958    	; 0x52a <pcf8574_getoutputpin>
+ 16c:	c8 2f       	mov	r28, r24
+ 16e:	62 e0       	ldi	r22, 0x02	; 2
+ 170:	80 e0       	ldi	r24, 0x00	; 0
+ 172:	3c d2       	rcall	.+1144   	; 0x5ec <pcf8574_setoutputpinlow>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <lcd_read+0x46>
+ 176:	62 e0       	ldi	r22, 0x02	; 2
+ 178:	80 e0       	ldi	r24, 0x00	; 0
+ 17a:	35 d2       	rcall	.+1130   	; 0x5e6 <pcf8574_setoutputpinhigh>
+ 17c:	00 c0       	rjmp	.+0      	; 0x17e <lcd_read+0x4e>
+ 17e:	64 e0       	ldi	r22, 0x04	; 4
+ 180:	80 e0       	ldi	r24, 0x00	; 0
+ 182:	d3 d1       	rcall	.+934    	; 0x52a <pcf8574_getoutputpin>
+ 184:	c2 95       	swap	r28
+ 186:	c0 7f       	andi	r28, 0xF0	; 240
+ 188:	8f 70       	andi	r24, 0x0F	; 15
+ 18a:	c8 2b       	or	r28, r24
+ 18c:	62 e0       	ldi	r22, 0x02	; 2
+ 18e:	80 e0       	ldi	r24, 0x00	; 0
+ 190:	2d d2       	rcall	.+1114   	; 0x5ec <pcf8574_setoutputpinlow>
+ 192:	8c 2f       	mov	r24, r28
+ 194:	cf 91       	pop	r28
+ 196:	08 95       	ret
+
+00000198 <lcd_waitbusy>:
+ 198:	80 e0       	ldi	r24, 0x00	; 0
+ 19a:	ca df       	rcall	.-108    	; 0x130 <lcd_read>
+ 19c:	88 23       	and	r24, r24
+ 19e:	e4 f3       	brlt	.-8      	; 0x198 <lcd_waitbusy>
+ 1a0:	88 e0       	ldi	r24, 0x08	; 8
+ 1a2:	90 e0       	ldi	r25, 0x00	; 0
+ 1a4:	01 97       	sbiw	r24, 0x01	; 1
+ 1a6:	f1 f7       	brne	.-4      	; 0x1a4 <lcd_waitbusy+0xc>
+ 1a8:	80 e0       	ldi	r24, 0x00	; 0
+ 1aa:	c2 cf       	rjmp	.-124    	; 0x130 <lcd_read>
+ 1ac:	08 95       	ret
+
+000001ae <toggle_e>:
+ 1ae:	62 e0       	ldi	r22, 0x02	; 2
+ 1b0:	80 e0       	ldi	r24, 0x00	; 0
+ 1b2:	19 d2       	rcall	.+1074   	; 0x5e6 <pcf8574_setoutputpinhigh>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <toggle_e+0x8>
+ 1b6:	62 e0       	ldi	r22, 0x02	; 2
+ 1b8:	80 e0       	ldi	r24, 0x00	; 0
+ 1ba:	18 c2       	rjmp	.+1072   	; 0x5ec <pcf8574_setoutputpinlow>
+ 1bc:	08 95       	ret
+
+000001be <lcd_write>:
+ 1be:	cf 93       	push	r28
+ 1c0:	c8 2f       	mov	r28, r24
+ 1c2:	66 23       	and	r22, r22
+ 1c4:	31 f0       	breq	.+12     	; 0x1d2 <lcd_write+0x14>
+ 1c6:	80 91 0e 01 	lds	r24, 0x010E
+ 1ca:	81 60       	ori	r24, 0x01	; 1
+ 1cc:	80 93 0e 01 	sts	0x010E, r24
+ 1d0:	05 c0       	rjmp	.+10     	; 0x1dc <lcd_write+0x1e>
+ 1d2:	80 91 0e 01 	lds	r24, 0x010E
+ 1d6:	8e 7f       	andi	r24, 0xFE	; 254
+ 1d8:	80 93 0e 01 	sts	0x010E, r24
+ 1dc:	80 91 0e 01 	lds	r24, 0x010E
+ 1e0:	8d 7f       	andi	r24, 0xFD	; 253
+ 1e2:	80 93 0e 01 	sts	0x010E, r24
+ 1e6:	60 91 0e 01 	lds	r22, 0x010E
+ 1ea:	80 e0       	ldi	r24, 0x00	; 0
+ 1ec:	b5 d1       	rcall	.+874    	; 0x558 <pcf8574_setoutput>
+ 1ee:	80 91 0e 01 	lds	r24, 0x010E
+ 1f2:	8f 77       	andi	r24, 0x7F	; 127
+ 1f4:	80 93 0e 01 	sts	0x010E, r24
+ 1f8:	80 91 0e 01 	lds	r24, 0x010E
+ 1fc:	8f 7b       	andi	r24, 0xBF	; 191
+ 1fe:	80 93 0e 01 	sts	0x010E, r24
+ 202:	80 91 0e 01 	lds	r24, 0x010E
+ 206:	8f 7d       	andi	r24, 0xDF	; 223
+ 208:	80 93 0e 01 	sts	0x010E, r24
+ 20c:	80 91 0e 01 	lds	r24, 0x010E
+ 210:	8f 7e       	andi	r24, 0xEF	; 239
+ 212:	80 93 0e 01 	sts	0x010E, r24
+ 216:	cc 23       	and	r28, r28
+ 218:	2c f4       	brge	.+10     	; 0x224 <lcd_write+0x66>
+ 21a:	80 91 0e 01 	lds	r24, 0x010E
+ 21e:	80 68       	ori	r24, 0x80	; 128
+ 220:	80 93 0e 01 	sts	0x010E, r24
+ 224:	c6 ff       	sbrs	r28, 6
+ 226:	05 c0       	rjmp	.+10     	; 0x232 <lcd_write+0x74>
+ 228:	80 91 0e 01 	lds	r24, 0x010E
+ 22c:	80 64       	ori	r24, 0x40	; 64
+ 22e:	80 93 0e 01 	sts	0x010E, r24
+ 232:	c5 ff       	sbrs	r28, 5
+ 234:	05 c0       	rjmp	.+10     	; 0x240 <lcd_write+0x82>
+ 236:	80 91 0e 01 	lds	r24, 0x010E
+ 23a:	80 62       	ori	r24, 0x20	; 32
+ 23c:	80 93 0e 01 	sts	0x010E, r24
+ 240:	c4 ff       	sbrs	r28, 4
+ 242:	05 c0       	rjmp	.+10     	; 0x24e <lcd_write+0x90>
+ 244:	80 91 0e 01 	lds	r24, 0x010E
+ 248:	80 61       	ori	r24, 0x10	; 16
+ 24a:	80 93 0e 01 	sts	0x010E, r24
+ 24e:	60 91 0e 01 	lds	r22, 0x010E
+ 252:	80 e0       	ldi	r24, 0x00	; 0
+ 254:	81 d1       	rcall	.+770    	; 0x558 <pcf8574_setoutput>
+ 256:	ab df       	rcall	.-170    	; 0x1ae <toggle_e>
+ 258:	80 91 0e 01 	lds	r24, 0x010E
+ 25c:	8f 77       	andi	r24, 0x7F	; 127
+ 25e:	80 93 0e 01 	sts	0x010E, r24
+ 262:	80 91 0e 01 	lds	r24, 0x010E
+ 266:	8f 7b       	andi	r24, 0xBF	; 191
+ 268:	80 93 0e 01 	sts	0x010E, r24
+ 26c:	80 91 0e 01 	lds	r24, 0x010E
+ 270:	8f 7d       	andi	r24, 0xDF	; 223
+ 272:	80 93 0e 01 	sts	0x010E, r24
+ 276:	80 91 0e 01 	lds	r24, 0x010E
+ 27a:	8f 7e       	andi	r24, 0xEF	; 239
+ 27c:	80 93 0e 01 	sts	0x010E, r24
+ 280:	c3 ff       	sbrs	r28, 3
+ 282:	05 c0       	rjmp	.+10     	; 0x28e <lcd_write+0xd0>
+ 284:	80 91 0e 01 	lds	r24, 0x010E
+ 288:	80 68       	ori	r24, 0x80	; 128
+ 28a:	80 93 0e 01 	sts	0x010E, r24
+ 28e:	c2 ff       	sbrs	r28, 2
+ 290:	05 c0       	rjmp	.+10     	; 0x29c <lcd_write+0xde>
+ 292:	80 91 0e 01 	lds	r24, 0x010E
+ 296:	80 64       	ori	r24, 0x40	; 64
+ 298:	80 93 0e 01 	sts	0x010E, r24
+ 29c:	c1 ff       	sbrs	r28, 1
+ 29e:	05 c0       	rjmp	.+10     	; 0x2aa <lcd_write+0xec>
+ 2a0:	80 91 0e 01 	lds	r24, 0x010E
+ 2a4:	80 62       	ori	r24, 0x20	; 32
+ 2a6:	80 93 0e 01 	sts	0x010E, r24
+ 2aa:	c0 ff       	sbrs	r28, 0
+ 2ac:	05 c0       	rjmp	.+10     	; 0x2b8 <lcd_write+0xfa>
+ 2ae:	80 91 0e 01 	lds	r24, 0x010E
+ 2b2:	80 61       	ori	r24, 0x10	; 16
+ 2b4:	80 93 0e 01 	sts	0x010E, r24
+ 2b8:	60 91 0e 01 	lds	r22, 0x010E
+ 2bc:	80 e0       	ldi	r24, 0x00	; 0
+ 2be:	4c d1       	rcall	.+664    	; 0x558 <pcf8574_setoutput>
+ 2c0:	76 df       	rcall	.-276    	; 0x1ae <toggle_e>
+ 2c2:	80 91 0e 01 	lds	r24, 0x010E
+ 2c6:	80 61       	ori	r24, 0x10	; 16
+ 2c8:	80 93 0e 01 	sts	0x010E, r24
+ 2cc:	80 91 0e 01 	lds	r24, 0x010E
+ 2d0:	80 62       	ori	r24, 0x20	; 32
+ 2d2:	80 93 0e 01 	sts	0x010E, r24
+ 2d6:	80 91 0e 01 	lds	r24, 0x010E
+ 2da:	80 64       	ori	r24, 0x40	; 64
+ 2dc:	80 93 0e 01 	sts	0x010E, r24
+ 2e0:	80 91 0e 01 	lds	r24, 0x010E
+ 2e4:	80 68       	ori	r24, 0x80	; 128
+ 2e6:	80 93 0e 01 	sts	0x010E, r24
+ 2ea:	60 91 0e 01 	lds	r22, 0x010E
+ 2ee:	80 e0       	ldi	r24, 0x00	; 0
+ 2f0:	33 d1       	rcall	.+614    	; 0x558 <pcf8574_setoutput>
+ 2f2:	cf 91       	pop	r28
+ 2f4:	08 95       	ret
+
+000002f6 <lcd_command>:
+ 2f6:	cf 93       	push	r28
+ 2f8:	c8 2f       	mov	r28, r24
+ 2fa:	4e df       	rcall	.-356    	; 0x198 <lcd_waitbusy>
+ 2fc:	60 e0       	ldi	r22, 0x00	; 0
+ 2fe:	8c 2f       	mov	r24, r28
+ 300:	5e df       	rcall	.-324    	; 0x1be <lcd_write>
+ 302:	cf 91       	pop	r28
+ 304:	08 95       	ret
+
+00000306 <lcd_gotoxy>:
+ 306:	61 11       	cpse	r22, r1
+ 308:	03 c0       	rjmp	.+6      	; 0x310 <lcd_gotoxy+0xa>
+ 30a:	80 58       	subi	r24, 0x80	; 128
+ 30c:	f4 cf       	rjmp	.-24     	; 0x2f6 <lcd_command>
+ 30e:	08 95       	ret
+ 310:	61 30       	cpi	r22, 0x01	; 1
+ 312:	19 f4       	brne	.+6      	; 0x31a <lcd_gotoxy+0x14>
+ 314:	80 54       	subi	r24, 0x40	; 64
+ 316:	ef cf       	rjmp	.-34     	; 0x2f6 <lcd_command>
+ 318:	08 95       	ret
+ 31a:	62 30       	cpi	r22, 0x02	; 2
+ 31c:	19 f4       	brne	.+6      	; 0x324 <lcd_gotoxy+0x1e>
+ 31e:	8c 56       	subi	r24, 0x6C	; 108
+ 320:	ea cf       	rjmp	.-44     	; 0x2f6 <lcd_command>
+ 322:	08 95       	ret
+ 324:	8c 52       	subi	r24, 0x2C	; 44
+ 326:	e7 cf       	rjmp	.-50     	; 0x2f6 <lcd_command>
+ 328:	08 95       	ret
+
+0000032a <lcd_clrscr>:
+ 32a:	81 e0       	ldi	r24, 0x01	; 1
+ 32c:	e4 cf       	rjmp	.-56     	; 0x2f6 <lcd_command>
+ 32e:	08 95       	ret
+
+00000330 <lcd_led>:
+ 330:	88 23       	and	r24, r24
+ 332:	31 f0       	breq	.+12     	; 0x340 <lcd_led+0x10>
+ 334:	80 91 0e 01 	lds	r24, 0x010E
+ 338:	87 7f       	andi	r24, 0xF7	; 247
+ 33a:	80 93 0e 01 	sts	0x010E, r24
+ 33e:	05 c0       	rjmp	.+10     	; 0x34a <lcd_led+0x1a>
+ 340:	80 91 0e 01 	lds	r24, 0x010E
+ 344:	88 60       	ori	r24, 0x08	; 8
+ 346:	80 93 0e 01 	sts	0x010E, r24
+ 34a:	60 91 0e 01 	lds	r22, 0x010E
+ 34e:	80 e0       	ldi	r24, 0x00	; 0
+ 350:	03 c1       	rjmp	.+518    	; 0x558 <pcf8574_setoutput>
+ 352:	08 95       	ret
+
+00000354 <lcd_home>:
+ 354:	82 e0       	ldi	r24, 0x02	; 2
+ 356:	cf cf       	rjmp	.-98     	; 0x2f6 <lcd_command>
+ 358:	08 95       	ret
+
+0000035a <lcd_putc>:
+ 35a:	cf 93       	push	r28
+ 35c:	c8 2f       	mov	r28, r24
+ 35e:	1c df       	rcall	.-456    	; 0x198 <lcd_waitbusy>
+ 360:	ca 30       	cpi	r28, 0x0A	; 10
+ 362:	a1 f4       	brne	.+40     	; 0x38c <lcd_putc+0x32>
+ 364:	84 31       	cpi	r24, 0x14	; 20
+ 366:	50 f0       	brcs	.+20     	; 0x37c <lcd_putc+0x22>
+ 368:	90 ec       	ldi	r25, 0xC0	; 192
+ 36a:	98 0f       	add	r25, r24
+ 36c:	94 31       	cpi	r25, 0x14	; 20
+ 36e:	40 f0       	brcs	.+16     	; 0x380 <lcd_putc+0x26>
+ 370:	9c ee       	ldi	r25, 0xEC	; 236
+ 372:	98 0f       	add	r25, r24
+ 374:	9c 32       	cpi	r25, 0x2C	; 44
+ 376:	30 f4       	brcc	.+12     	; 0x384 <lcd_putc+0x2a>
+ 378:	84 e5       	ldi	r24, 0x54	; 84
+ 37a:	05 c0       	rjmp	.+10     	; 0x386 <lcd_putc+0x2c>
+ 37c:	80 e4       	ldi	r24, 0x40	; 64
+ 37e:	03 c0       	rjmp	.+6      	; 0x386 <lcd_putc+0x2c>
+ 380:	84 e1       	ldi	r24, 0x14	; 20
+ 382:	01 c0       	rjmp	.+2      	; 0x386 <lcd_putc+0x2c>
+ 384:	80 e0       	ldi	r24, 0x00	; 0
+ 386:	80 58       	subi	r24, 0x80	; 128
+ 388:	b6 df       	rcall	.-148    	; 0x2f6 <lcd_command>
+ 38a:	1b c0       	rjmp	.+54     	; 0x3c2 <lcd_putc+0x68>
+ 38c:	84 31       	cpi	r24, 0x14	; 20
+ 38e:	21 f4       	brne	.+8      	; 0x398 <lcd_putc+0x3e>
+ 390:	60 e0       	ldi	r22, 0x00	; 0
+ 392:	80 ec       	ldi	r24, 0xC0	; 192
+ 394:	14 df       	rcall	.-472    	; 0x1be <lcd_write>
+ 396:	11 c0       	rjmp	.+34     	; 0x3ba <lcd_putc+0x60>
+ 398:	84 35       	cpi	r24, 0x54	; 84
+ 39a:	21 f4       	brne	.+8      	; 0x3a4 <lcd_putc+0x4a>
+ 39c:	60 e0       	ldi	r22, 0x00	; 0
+ 39e:	84 e9       	ldi	r24, 0x94	; 148
+ 3a0:	0e df       	rcall	.-484    	; 0x1be <lcd_write>
+ 3a2:	0b c0       	rjmp	.+22     	; 0x3ba <lcd_putc+0x60>
+ 3a4:	88 32       	cpi	r24, 0x28	; 40
+ 3a6:	21 f4       	brne	.+8      	; 0x3b0 <lcd_putc+0x56>
+ 3a8:	60 e0       	ldi	r22, 0x00	; 0
+ 3aa:	84 ed       	ldi	r24, 0xD4	; 212
+ 3ac:	08 df       	rcall	.-496    	; 0x1be <lcd_write>
+ 3ae:	05 c0       	rjmp	.+10     	; 0x3ba <lcd_putc+0x60>
+ 3b0:	88 36       	cpi	r24, 0x68	; 104
+ 3b2:	19 f4       	brne	.+6      	; 0x3ba <lcd_putc+0x60>
+ 3b4:	60 e0       	ldi	r22, 0x00	; 0
+ 3b6:	80 e8       	ldi	r24, 0x80	; 128
+ 3b8:	02 df       	rcall	.-508    	; 0x1be <lcd_write>
+ 3ba:	ee de       	rcall	.-548    	; 0x198 <lcd_waitbusy>
+ 3bc:	61 e0       	ldi	r22, 0x01	; 1
+ 3be:	8c 2f       	mov	r24, r28
+ 3c0:	fe de       	rcall	.-516    	; 0x1be <lcd_write>
+ 3c2:	cf 91       	pop	r28
+ 3c4:	08 95       	ret
+
+000003c6 <lcd_puts>:
+ 3c6:	cf 93       	push	r28
+ 3c8:	df 93       	push	r29
+ 3ca:	ec 01       	movw	r28, r24
+ 3cc:	21 96       	adiw	r28, 0x01	; 1
+ 3ce:	fc 01       	movw	r30, r24
+ 3d0:	80 81       	ld	r24, Z
+ 3d2:	88 23       	and	r24, r24
+ 3d4:	21 f0       	breq	.+8      	; 0x3de <lcd_puts+0x18>
+ 3d6:	c1 df       	rcall	.-126    	; 0x35a <lcd_putc>
+ 3d8:	89 91       	ld	r24, Y+
+ 3da:	81 11       	cpse	r24, r1
+ 3dc:	fc cf       	rjmp	.-8      	; 0x3d6 <lcd_puts+0x10>
+ 3de:	df 91       	pop	r29
+ 3e0:	cf 91       	pop	r28
+ 3e2:	08 95       	ret
+
+000003e4 <lcd_init>:
+                   LCD_DISP_ON_CURSOR      display on, cursor on
+                   LCD_DISP_CURSOR_BLINK   display on, cursor on flashing
+Returns:  none
+*************************************************************************/
+void lcd_init(uint8_t dispAttr)
+{
+ 3e4:	cf 93       	push	r28
+ 3e6:	c8 2f       	mov	r28, r24
+	#if LCD_PCF8574_INIT == 1
+	//init pcf8574
+	pcf8574_init();
+ 3e8:	90 d0       	rcall	.+288    	; 0x50a <pcf8574_init>
+	#endif
+
+	dataport = 0;
+ 3ea:	10 92 0e 01 	sts	0x010E, r1
+	pcf8574_setoutput(LCD_PCF8574_DEVICEID, dataport);
+ 3ee:	60 91 0e 01 	lds	r22, 0x010E
+ 3f2:	80 e0       	ldi	r24, 0x00	; 0
+ 3f4:	b1 d0       	rcall	.+354    	; 0x558 <pcf8574_setoutput>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+ 3f6:	e0 e0       	ldi	r30, 0x00	; 0
+ 3f8:	fa ef       	ldi	r31, 0xFA	; 250
+ 3fa:	31 97       	sbiw	r30, 0x01	; 1
+ 3fc:	f1 f7       	brne	.-4      	; 0x3fa <lcd_init+0x16>
+	pcf8574_setoutput(LCD_PCF8574_DEVICEID, dataport);
+
+    delay(16000);        /* wait 16ms or more after power-on       */
+
+    /* initial write to lcd is 8bit */
+    dataport |= _BV(LCD_DATA1_PIN);  // _BV(LCD_FUNCTION)>>4;
+ 3fe:	80 91 0e 01 	lds	r24, 0x010E
+ 402:	80 62       	ori	r24, 0x20	; 32
+ 404:	80 93 0e 01 	sts	0x010E, r24
+    dataport |= _BV(LCD_DATA0_PIN);  // _BV(LCD_FUNCTION_8BIT)>>4;
+ 408:	80 91 0e 01 	lds	r24, 0x010E
+ 40c:	80 61       	ori	r24, 0x10	; 16
+ 40e:	80 93 0e 01 	sts	0x010E, r24
+    pcf8574_setoutput(LCD_PCF8574_DEVICEID, dataport);
+ 412:	60 91 0e 01 	lds	r22, 0x010E
+ 416:	80 e0       	ldi	r24, 0x00	; 0
+ 418:	9f d0       	rcall	.+318    	; 0x558 <pcf8574_setoutput>
+
+    lcd_e_toggle();
+ 41a:	c9 de       	rcall	.-622    	; 0x1ae <toggle_e>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+ 41c:	e0 e0       	ldi	r30, 0x00	; 0
+ 41e:	fe e4       	ldi	r31, 0x4E	; 78
+ 420:	31 97       	sbiw	r30, 0x01	; 1
+ 422:	f1 f7       	brne	.-4      	; 0x420 <lcd_init+0x3c>
+
+    lcd_e_toggle();
+    delay(4992);         /* delay, busy flag can't be checked here */
+   
+    /* repeat last command */ 
+    lcd_e_toggle();      
+ 424:	c4 de       	rcall	.-632    	; 0x1ae <toggle_e>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+ 426:	e0 e0       	ldi	r30, 0x00	; 0
+ 428:	f1 e0       	ldi	r31, 0x01	; 1
+ 42a:	31 97       	sbiw	r30, 0x01	; 1
+ 42c:	f1 f7       	brne	.-4      	; 0x42a <lcd_init+0x46>
+    /* repeat last command */ 
+    lcd_e_toggle();      
+    delay(64);           /* delay, busy flag can't be checked here */
+    
+    /* repeat last command a third time */
+    lcd_e_toggle();      
+ 42e:	bf de       	rcall	.-642    	; 0x1ae <toggle_e>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+ 430:	e0 e0       	ldi	r30, 0x00	; 0
+ 432:	f1 e0       	ldi	r31, 0x01	; 1
+ 434:	31 97       	sbiw	r30, 0x01	; 1
+ 436:	f1 f7       	brne	.-4      	; 0x434 <lcd_init+0x50>
+    /* repeat last command a third time */
+    lcd_e_toggle();      
+    delay(64);           /* delay, busy flag can't be checked here */
+
+    /* now configure for 4bit mode */
+    dataport &= ~_BV(LCD_DATA0_PIN);
+ 438:	80 91 0e 01 	lds	r24, 0x010E
+ 43c:	8f 7e       	andi	r24, 0xEF	; 239
+ 43e:	80 93 0e 01 	sts	0x010E, r24
+    pcf8574_setoutput(LCD_PCF8574_DEVICEID, dataport);
+ 442:	60 91 0e 01 	lds	r22, 0x010E
+ 446:	80 e0       	ldi	r24, 0x00	; 0
+ 448:	87 d0       	rcall	.+270    	; 0x558 <pcf8574_setoutput>
+    lcd_e_toggle();
+ 44a:	b1 de       	rcall	.-670    	; 0x1ae <toggle_e>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+ 44c:	e0 e0       	ldi	r30, 0x00	; 0
+ 44e:	f1 e0       	ldi	r31, 0x01	; 1
+ 450:	31 97       	sbiw	r30, 0x01	; 1
+ 452:	f1 f7       	brne	.-4      	; 0x450 <lcd_init+0x6c>
+    lcd_e_toggle();
+    delay(64);           /* some displays need this additional delay */
+    
+    /* from now the LCD only accepts 4 bit I/O, we can use lcd_command() */    
+
+    lcd_command(LCD_FUNCTION_DEFAULT);      /* function set: display lines  */
+ 454:	88 e2       	ldi	r24, 0x28	; 40
+ 456:	4f df       	rcall	.-354    	; 0x2f6 <lcd_command>
+
+    lcd_command(LCD_DISP_OFF);              /* display off                  */
+ 458:	88 e0       	ldi	r24, 0x08	; 8
+ 45a:	4d df       	rcall	.-358    	; 0x2f6 <lcd_command>
+    lcd_clrscr();                           /* display clear                */
+ 45c:	66 df       	rcall	.-308    	; 0x32a <lcd_clrscr>
+    lcd_command(LCD_MODE_DEFAULT);          /* set entry mode               */
+ 45e:	86 e0       	ldi	r24, 0x06	; 6
+ 460:	4a df       	rcall	.-364    	; 0x2f6 <lcd_command>
+    lcd_command(dispAttr);                  /* display/cursor control       */
+ 462:	8c 2f       	mov	r24, r28
+ 464:	48 df       	rcall	.-368    	; 0x2f6 <lcd_command>
+
+}/* lcd_init */
+ 466:	cf 91       	pop	r28
+ 468:	08 95       	ret
+
+0000046a <__vector_5>:
+
+//Variable/flag used in main for displaying "On/Off" state of the LCD
+volatile int ledFlag = 0;
+
+ISR(PCINT2_vect)
+{
+ 46a:	1f 92       	push	r1
+ 46c:	0f 92       	push	r0
+ 46e:	0f b6       	in	r0, 0x3f	; 63
+ 470:	0f 92       	push	r0
+ 472:	11 24       	eor	r1, r1
+ 474:	8f 93       	push	r24
+ 476:	9f 93       	push	r25
+	if(PIND & (1 << PD7))
+ 478:	4f 9b       	sbis	0x09, 7	; 9
+ 47a:	08 c0       	rjmp	.+16     	; 0x48c <__vector_5+0x22>
+	{
+		//If the switch is pressed, turn on the LED
+		PORTD |= (1 << PD4);
+ 47c:	5c 9a       	sbi	0x0b, 4	; 11
+		ledFlag = 1;
+ 47e:	81 e0       	ldi	r24, 0x01	; 1
+ 480:	90 e0       	ldi	r25, 0x00	; 0
+ 482:	90 93 10 01 	sts	0x0110, r25
+ 486:	80 93 0f 01 	sts	0x010F, r24
+ 48a:	07 c0       	rjmp	.+14     	; 0x49a <__vector_5+0x30>
+	}
+	//If the switch is not pressed, turn off the LED
+	else if(!(PIND & (1 << PD7)))
+ 48c:	4f 99       	sbic	0x09, 7	; 9
+ 48e:	05 c0       	rjmp	.+10     	; 0x49a <__vector_5+0x30>
+	{
+		PORTD &= ~(1 << PD4);
+ 490:	5c 98       	cbi	0x0b, 4	; 11
+		ledFlag = 0;
+ 492:	10 92 10 01 	sts	0x0110, r1
+ 496:	10 92 0f 01 	sts	0x010F, r1
+	}
+}
+ 49a:	9f 91       	pop	r25
+ 49c:	8f 91       	pop	r24
+ 49e:	0f 90       	pop	r0
+ 4a0:	0f be       	out	0x3f, r0	; 63
+ 4a2:	0f 90       	pop	r0
+ 4a4:	1f 90       	pop	r1
+ 4a6:	18 95       	reti
+
+000004a8 <main>:
+
+int main(void)
+{
+	//
+	lcd_init(LCD_DISP_ON);
+ 4a8:	8c e0       	ldi	r24, 0x0C	; 12
+ 4aa:	9c df       	rcall	.-200    	; 0x3e4 <lcd_init>
+	uint8_t led = 0;
+	lcd_led(led);
+ 4ac:	80 e0       	ldi	r24, 0x00	; 0
+ 4ae:	40 df       	rcall	.-384    	; 0x330 <lcd_led>
+	DDRD |= (1 << PD4);
+ 4b0:	54 9a       	sbi	0x0a, 4	; 10
+	DDRD &= ~(1 << PD7);
+ 4b2:	57 98       	cbi	0x0a, 7	; 10
+	PORTD |= (1 << PD7);
+ 4b4:	5f 9a       	sbi	0x0b, 7	; 11
+	PCICR = (1 << PCIE2);
+ 4b6:	84 e0       	ldi	r24, 0x04	; 4
+ 4b8:	80 93 68 00 	sts	0x0068, r24
+	PCMSK2 = (1 << PCINT23);
+ 4bc:	80 e8       	ldi	r24, 0x80	; 128
+ 4be:	80 93 6d 00 	sts	0x006D, r24
+	sei();
+ 4c2:	78 94       	sei
+	lcd_clrscr();
+ 4c4:	32 df       	rcall	.-412    	; 0x32a <lcd_clrscr>
+	while(1)
+	{
+		if(ledFlag == 1)
+ 4c6:	80 91 0f 01 	lds	r24, 0x010F
+ 4ca:	90 91 10 01 	lds	r25, 0x0110
+ 4ce:	01 97       	sbiw	r24, 0x01	; 1
+ 4d0:	71 f4       	brne	.+28     	; 0x4ee <main+0x46>
+		{
+			//lcd_clrscr();
+			lcd_home();
+ 4d2:	40 df       	rcall	.-384    	; 0x354 <lcd_home>
+			lcd_gotoxy(6, 0);
+ 4d4:	60 e0       	ldi	r22, 0x00	; 0
+ 4d6:	86 e0       	ldi	r24, 0x06	; 6
+ 4d8:	16 df       	rcall	.-468    	; 0x306 <lcd_gotoxy>
+			lcd_puts("LED");
+ 4da:	80 e0       	ldi	r24, 0x00	; 0
+ 4dc:	91 e0       	ldi	r25, 0x01	; 1
+ 4de:	73 df       	rcall	.-282    	; 0x3c6 <lcd_puts>
+			lcd_gotoxy(10, 0);
+ 4e0:	60 e0       	ldi	r22, 0x00	; 0
+ 4e2:	8a e0       	ldi	r24, 0x0A	; 10
+ 4e4:	10 df       	rcall	.-480    	; 0x306 <lcd_gotoxy>
+			lcd_puts("On! ");
+ 4e6:	84 e0       	ldi	r24, 0x04	; 4
+ 4e8:	91 e0       	ldi	r25, 0x01	; 1
+ 4ea:	6d df       	rcall	.-294    	; 0x3c6 <lcd_puts>
+ 4ec:	ec cf       	rjmp	.-40     	; 0x4c6 <main+0x1e>
+			//_delay_ms(1000);
+		}
+		else
+		{
+			//lcd_clrscr();
+			lcd_home();
+ 4ee:	32 df       	rcall	.-412    	; 0x354 <lcd_home>
+			lcd_gotoxy(6, 0);
+ 4f0:	60 e0       	ldi	r22, 0x00	; 0
+ 4f2:	86 e0       	ldi	r24, 0x06	; 6
+ 4f4:	08 df       	rcall	.-496    	; 0x306 <lcd_gotoxy>
+			lcd_puts("LED");
+ 4f6:	80 e0       	ldi	r24, 0x00	; 0
+ 4f8:	91 e0       	ldi	r25, 0x01	; 1
+ 4fa:	65 df       	rcall	.-310    	; 0x3c6 <lcd_puts>
+			lcd_gotoxy(10, 0);
+ 4fc:	60 e0       	ldi	r22, 0x00	; 0
+ 4fe:	8a e0       	ldi	r24, 0x0A	; 10
+ 500:	02 df       	rcall	.-508    	; 0x306 <lcd_gotoxy>
+			lcd_puts("Off!");
+ 502:	89 e0       	ldi	r24, 0x09	; 9
+ 504:	91 e0       	ldi	r25, 0x01	; 1
+ 506:	5f df       	rcall	.-322    	; 0x3c6 <lcd_puts>
+ 508:	de cf       	rjmp	.-68     	; 0x4c6 <main+0x1e>
+
+0000050a <pcf8574_init>:
+		i2c_write(b);
+		i2c_stop();
+		return 0;
+	}
+	return -1;
+}
+ 50a:	ca dd       	rcall	.-1132   	; 0xa0 <i2c_init>
+ 50c:	85 e3       	ldi	r24, 0x35	; 53
+ 50e:	8a 95       	dec	r24
+ 510:	f1 f7       	brne	.-4      	; 0x50e <pcf8574_init+0x4>
+ 512:	00 00       	nop
+ 514:	80 e0       	ldi	r24, 0x00	; 0
+ 516:	90 e0       	ldi	r25, 0x00	; 0
+ 518:	fc 01       	movw	r30, r24
+ 51a:	ef 5e       	subi	r30, 0xEF	; 239
+ 51c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 51e:	10 82       	st	Z, r1
+ 520:	01 96       	adiw	r24, 0x01	; 1
+ 522:	88 30       	cpi	r24, 0x08	; 8
+ 524:	91 05       	cpc	r25, r1
+ 526:	c1 f7       	brne	.-16     	; 0x518 <pcf8574_init+0xe>
+ 528:	08 95       	ret
+
+0000052a <pcf8574_getoutputpin>:
+ 52a:	88 30       	cpi	r24, 0x08	; 8
+ 52c:	88 f4       	brcc	.+34     	; 0x550 <pcf8574_getoutputpin+0x26>
+ 52e:	68 30       	cpi	r22, 0x08	; 8
+ 530:	88 f4       	brcc	.+34     	; 0x554 <pcf8574_getoutputpin+0x2a>
+ 532:	e8 2f       	mov	r30, r24
+ 534:	f0 e0       	ldi	r31, 0x00	; 0
+ 536:	ef 5e       	subi	r30, 0xEF	; 239
+ 538:	fe 4f       	sbci	r31, 0xFE	; 254
+ 53a:	80 81       	ld	r24, Z
+ 53c:	99 27       	eor	r25, r25
+ 53e:	87 fd       	sbrc	r24, 7
+ 540:	90 95       	com	r25
+ 542:	02 c0       	rjmp	.+4      	; 0x548 <pcf8574_getoutputpin+0x1e>
+ 544:	95 95       	asr	r25
+ 546:	87 95       	ror	r24
+ 548:	6a 95       	dec	r22
+ 54a:	e2 f7       	brpl	.-8      	; 0x544 <pcf8574_getoutputpin+0x1a>
+ 54c:	81 70       	andi	r24, 0x01	; 1
+ 54e:	08 95       	ret
+ 550:	8f ef       	ldi	r24, 0xFF	; 255
+ 552:	08 95       	ret
+ 554:	8f ef       	ldi	r24, 0xFF	; 255
+ 556:	08 95       	ret
+
+00000558 <pcf8574_setoutput>:
+ 558:	cf 93       	push	r28
+ 55a:	c6 2f       	mov	r28, r22
+ 55c:	88 30       	cpi	r24, 0x08	; 8
+ 55e:	68 f4       	brcc	.+26     	; 0x57a <pcf8574_setoutput+0x22>
+ 560:	e8 2f       	mov	r30, r24
+ 562:	f0 e0       	ldi	r31, 0x00	; 0
+ 564:	ef 5e       	subi	r30, 0xEF	; 239
+ 566:	fe 4f       	sbci	r31, 0xFE	; 254
+ 568:	60 83       	st	Z, r22
+ 56a:	81 5c       	subi	r24, 0xC1	; 193
+ 56c:	88 0f       	add	r24, r24
+ 56e:	9e dd       	rcall	.-1220   	; 0xac <i2c_start>
+ 570:	8c 2f       	mov	r24, r28
+ 572:	cc dd       	rcall	.-1128   	; 0x10c <i2c_write>
+ 574:	c2 dd       	rcall	.-1148   	; 0xfa <i2c_stop>
+ 576:	80 e0       	ldi	r24, 0x00	; 0
+ 578:	01 c0       	rjmp	.+2      	; 0x57c <pcf8574_setoutput+0x24>
+ 57a:	8f ef       	ldi	r24, 0xFF	; 255
+ 57c:	cf 91       	pop	r28
+ 57e:	08 95       	ret
+
+00000580 <pcf8574_setoutputpin>:
+
+/*
+ * set output pin
+ */
+int8_t pcf8574_setoutputpin(uint8_t deviceid, uint8_t pin, uint8_t data) {
+ 580:	cf 93       	push	r28
+	if((deviceid >= 0 && deviceid < PCF8574_MAXDEVICES) && (pin >= 0 && pin < PCF8574_MAXPINS)) {
+ 582:	88 30       	cpi	r24, 0x08	; 8
+ 584:	58 f5       	brcc	.+86     	; 0x5dc <pcf8574_setoutputpin+0x5c>
+ 586:	68 30       	cpi	r22, 0x08	; 8
+ 588:	58 f5       	brcc	.+86     	; 0x5e0 <pcf8574_setoutputpin+0x60>
+	    uint8_t b = 0;
+	    b = pcf8574_pinstatus[deviceid];
+ 58a:	28 2f       	mov	r18, r24
+ 58c:	30 e0       	ldi	r19, 0x00	; 0
+ 58e:	f9 01       	movw	r30, r18
+ 590:	ef 5e       	subi	r30, 0xEF	; 239
+ 592:	fe 4f       	sbci	r31, 0xFE	; 254
+ 594:	c0 81       	ld	r28, Z
+	    b = (data != 0) ? (b | (1 << pin)) : (b & ~(1 << pin));
+ 596:	44 23       	and	r20, r20
+ 598:	51 f0       	breq	.+20     	; 0x5ae <pcf8574_setoutputpin+0x2e>
+ 59a:	e1 e0       	ldi	r30, 0x01	; 1
+ 59c:	f0 e0       	ldi	r31, 0x00	; 0
+ 59e:	af 01       	movw	r20, r30
+ 5a0:	02 c0       	rjmp	.+4      	; 0x5a6 <pcf8574_setoutputpin+0x26>
+ 5a2:	44 0f       	add	r20, r20
+ 5a4:	55 1f       	adc	r21, r21
+ 5a6:	6a 95       	dec	r22
+ 5a8:	e2 f7       	brpl	.-8      	; 0x5a2 <pcf8574_setoutputpin+0x22>
+ 5aa:	c4 2b       	or	r28, r20
+ 5ac:	0b c0       	rjmp	.+22     	; 0x5c4 <pcf8574_setoutputpin+0x44>
+ 5ae:	41 e0       	ldi	r20, 0x01	; 1
+ 5b0:	50 e0       	ldi	r21, 0x00	; 0
+ 5b2:	fa 01       	movw	r30, r20
+ 5b4:	02 c0       	rjmp	.+4      	; 0x5ba <pcf8574_setoutputpin+0x3a>
+ 5b6:	ee 0f       	add	r30, r30
+ 5b8:	ff 1f       	adc	r31, r31
+ 5ba:	6a 95       	dec	r22
+ 5bc:	e2 f7       	brpl	.-8      	; 0x5b6 <pcf8574_setoutputpin+0x36>
+ 5be:	bf 01       	movw	r22, r30
+ 5c0:	60 95       	com	r22
+ 5c2:	c6 23       	and	r28, r22
+	    pcf8574_pinstatus[deviceid] = b;
+ 5c4:	f9 01       	movw	r30, r18
+ 5c6:	ef 5e       	subi	r30, 0xEF	; 239
+ 5c8:	fe 4f       	sbci	r31, 0xFE	; 254
+ 5ca:	c0 83       	st	Z, r28
+	    //update device
+		i2c_start(((PCF8574_ADDRBASE+deviceid)<<1) | I2C_WRITE);
+ 5cc:	81 5c       	subi	r24, 0xC1	; 193
+ 5ce:	88 0f       	add	r24, r24
+ 5d0:	6d dd       	rcall	.-1318   	; 0xac <i2c_start>
+		i2c_write(b);
+ 5d2:	8c 2f       	mov	r24, r28
+ 5d4:	9b dd       	rcall	.-1226   	; 0x10c <i2c_write>
+		i2c_stop();
+ 5d6:	91 dd       	rcall	.-1246   	; 0xfa <i2c_stop>
+		return 0;
+ 5d8:	80 e0       	ldi	r24, 0x00	; 0
+ 5da:	03 c0       	rjmp	.+6      	; 0x5e2 <pcf8574_setoutputpin+0x62>
+	}
+	return -1;
+ 5dc:	8f ef       	ldi	r24, 0xFF	; 255
+ 5de:	01 c0       	rjmp	.+2      	; 0x5e2 <pcf8574_setoutputpin+0x62>
+ 5e0:	8f ef       	ldi	r24, 0xFF	; 255
+}
+ 5e2:	cf 91       	pop	r28
+ 5e4:	08 95       	ret
+
+000005e6 <pcf8574_setoutputpinhigh>:
+
+/*
+ * set output pin high
+ */
+int8_t pcf8574_setoutputpinhigh(uint8_t deviceid, uint8_t pin) {
+	return pcf8574_setoutputpin(deviceid, pin, 1);
+ 5e6:	41 e0       	ldi	r20, 0x01	; 1
+ 5e8:	cb cf       	rjmp	.-106    	; 0x580 <pcf8574_setoutputpin>
+}
+ 5ea:	08 95       	ret
+
+000005ec <pcf8574_setoutputpinlow>:
+
+/*
+ * set output pin low
+ */
+int8_t pcf8574_setoutputpinlow(uint8_t deviceid, uint8_t pin) {
+	return pcf8574_setoutputpin(deviceid, pin, 0);
+ 5ec:	40 e0       	ldi	r20, 0x00	; 0
+ 5ee:	c8 cf       	rjmp	.-112    	; 0x580 <pcf8574_setoutputpin>
+}
+ 5f0:	08 95       	ret
+
+000005f2 <_exit>:
+ 5f2:	f8 94       	cli
+
+000005f4 <__stop_program>:
+ 5f4:	ff cf       	rjmp	.-2      	; 0x5f4 <__stop_program>
