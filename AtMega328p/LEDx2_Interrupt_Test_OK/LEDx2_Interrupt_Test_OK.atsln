@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LEDx2_Interrupt_Test_OK", "LEDx2_Interrupt_Test_OK\LEDx2_Interrupt_Test_OK.cproj", "{BC725ECD-DAF4-443B-8817-1F964B68B2BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC725ECD-DAF4-443B-8817-1F964B68B2BE}.Debug|AVR.ActiveCfg = Debug|AVR
+		{BC725ECD-DAF4-443B-8817-1F964B68B2BE}.Debug|AVR.Build.0 = Debug|AVR
+		{BC725ECD-DAF4-443B-8817-1F964B68B2BE}.Release|AVR.ActiveCfg = Release|AVR
+		{BC725ECD-DAF4-443B-8817-1F964B68B2BE}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
