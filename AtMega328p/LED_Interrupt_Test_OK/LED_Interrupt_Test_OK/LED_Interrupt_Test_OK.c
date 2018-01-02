@@ -14,7 +14,7 @@
 
 #include "lcdpcf8574/lcdpcf8574.h"
 
-//Variable/flag used in main for displaying "On/Off" state of the LCD
+//Variable/flag used in main for displaying "On/Off" state of the LED
 volatile int ledFlag = 0;
 
 ISR(PCINT2_vect)
