@@ -19,16 +19,16 @@ volatile int ledFlag = 0;
 
 ISR(PCINT2_vect)
 {
-	if(PIND & (1 << PD7))
+	if(PIND & (1 << PORTD7))
 	{
 		//If the switch is pressed, turn on the LED
-		PORTD |= (1 << PD4);
+		PORTD |= (1 << PORTD4);
 		ledFlag = 1;
 	}
 	//If the switch is not pressed, turn off the LED
-	else if(!(PIND & (1 << PD7)))
+	else if(!(PIND & (1 << PORTD7)))
 	{
-		PORTD &= ~(1 << PD4);
+		PORTD &= ~(1 << PORTD4);
 		ledFlag = 0;
 	}
 }
@@ -42,11 +42,11 @@ int main(void)
 	//Illuminate the LCD
 	lcd_led(led);
 	//Set Pin D4 as output
-	DDRD |= (1 << PD4);
+	DDRD |= (1 << PORTD4);
 	//Set Pin D7 as input
-	DDRD &= ~(1 << PD7);
+	DDRD &= ~(1 << PORTD7);
 	//Enbale Pin D7 pull-up resistor
-	PORTD |= (1 << PD7);
+	PORTD |= (1 << PORTD7);
 	//Enable Pin Change Interrupt
 	PCICR = (1 << PCIE2);
 	//Enable PCINT23 (Pin D7)
