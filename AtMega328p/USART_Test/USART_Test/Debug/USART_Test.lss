@@ -1,0 +1,367 @@
+
+USART_Test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000010  00800100  000001d6  0000026a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001d6  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000104  00800110  00800110  0000027a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000027a  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000068  00000000  00000000  000002aa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000003c1  00000000  00000000  00000312  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000222  00000000  00000000  000006d3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000026c  00000000  00000000  000008f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000e4  00000000  00000000  00000b64  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000260  00000000  00000000  00000c48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000207  00000000  00000000  00000ea8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  000010af  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 68 00 	jmp	0xd0	; 0xd0 <__vector_18>
+  4c:	0c 94 88 00 	jmp	0x110	; 0x110 <__vector_19>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 ed       	ldi	r30, 0xD6	; 214
+  7c:	f1 e0       	ldi	r31, 0x01	; 1
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a0 31       	cpi	r26, 0x10	; 16
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	22 e0       	ldi	r18, 0x02	; 2
+  8c:	a0 e1       	ldi	r26, 0x10	; 16
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a4 31       	cpi	r26, 0x14	; 20
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 d6 00 	call	0x1ac	; 0x1ac <main>
+  9e:	0c 94 e9 00 	jmp	0x1d2	; 0x1d2 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <USART0_Init>:
+void USART0_Init(unsigned int ubrr_val)
+{
+	unsigned char x;
+
+	/* Set the baud rate */
+	UBRR0H = (unsigned char) (ubrr_val>>8);                  
+  a6:	90 93 c5 00 	sts	0x00C5, r25
+	UBRR0L = (unsigned char) ubrr_val;
+  aa:	80 93 c4 00 	sts	0x00C4, r24
+	
+	/* Enable USART receiver and transmitter */
+	UCSR0B = ((1 << RXCIE0) | (1 << RXEN0) | (1 << TXEN0)); 
+  ae:	88 e9       	ldi	r24, 0x98	; 152
+  b0:	80 93 c1 00 	sts	0x00C1, r24
+	/* For devices in which UBRRH/UCSRC shares the same location
+	* eg; ATmega16, URSEL should be written to 1 when writing UCSRC
+	* 
+	*/
+	/* Set frame format: 8 data 2stop */
+	UCSR0C = (1 << USBS0) | (1 << UCSZ01) | (1 << UCSZ00);
+  b4:	8e e0       	ldi	r24, 0x0E	; 14
+  b6:	80 93 c2 00 	sts	0x00C2, r24
+	
+	/* It appears that ATMega328p on Arduino Uno U2X0 bit is On by default
+	* Clearing the bit on register UCSR0A solves the baud rate problem */
+	UCSR0A = (0 << U2X0);
+  ba:	10 92 c0 00 	sts	0x00C0, r1
+	/* Flush receive buffer */
+	x = 0; 			    
+
+	USART_RxTail = x;
+  be:	10 92 92 01 	sts	0x0192, r1
+	USART_RxHead = x;
+  c2:	10 92 93 01 	sts	0x0193, r1
+	USART_TxTail = x;
+  c6:	10 92 10 01 	sts	0x0110, r1
+	USART_TxHead = x;
+  ca:	10 92 11 01 	sts	0x0111, r1
+  ce:	08 95       	ret
+
+000000d0 <__vector_18>:
+ISR(USART_RX_vect)
+//#else
+//#pragma vector=USART_RX_vect
+//__interrupt void USART_RX_interrupt(void)
+//#endif
+{
+  d0:	1f 92       	push	r1
+  d2:	0f 92       	push	r0
+  d4:	0f b6       	in	r0, 0x3f	; 63
+  d6:	0f 92       	push	r0
+  d8:	11 24       	eor	r1, r1
+  da:	8f 93       	push	r24
+  dc:	9f 93       	push	r25
+  de:	ef 93       	push	r30
+  e0:	ff 93       	push	r31
+	unsigned char data;
+	unsigned char tmphead;
+
+	/* Read the received data */
+	data = UDR0;                 
+  e2:	80 91 c6 00 	lds	r24, 0x00C6
+	/* Calculate buffer index */
+	tmphead = (USART_RxHead + 1) & USART_RX_BUFFER_MASK;
+  e6:	e0 91 93 01 	lds	r30, 0x0193
+  ea:	ef 5f       	subi	r30, 0xFF	; 255
+  ec:	ef 77       	andi	r30, 0x7F	; 127
+	/* Store new index */
+	USART_RxHead = tmphead;
+  ee:	e0 93 93 01 	sts	0x0193, r30
+
+	if (tmphead == USART_RxTail) {
+  f2:	90 91 92 01 	lds	r25, 0x0192
+		/* ERROR! Receive buffer overflow */
+	}
+	/* Store received data in buffer */
+	USART_RxBuf[tmphead] = data; 
+  f6:	f0 e0       	ldi	r31, 0x00	; 0
+  f8:	ec 56       	subi	r30, 0x6C	; 108
+  fa:	fe 4f       	sbci	r31, 0xFE	; 254
+  fc:	80 83       	st	Z, r24
+}
+  fe:	ff 91       	pop	r31
+ 100:	ef 91       	pop	r30
+ 102:	9f 91       	pop	r25
+ 104:	8f 91       	pop	r24
+ 106:	0f 90       	pop	r0
+ 108:	0f be       	out	0x3f, r0	; 63
+ 10a:	0f 90       	pop	r0
+ 10c:	1f 90       	pop	r1
+ 10e:	18 95       	reti
+
+00000110 <__vector_19>:
+ISR(USART_UDRE_vect)
+//#else
+//#pragma vector=USART_UDRE_vect
+//__interrupt void USART1_DRE_interrupt(void)
+//#endif
+{
+ 110:	1f 92       	push	r1
+ 112:	0f 92       	push	r0
+ 114:	0f b6       	in	r0, 0x3f	; 63
+ 116:	0f 92       	push	r0
+ 118:	11 24       	eor	r1, r1
+ 11a:	8f 93       	push	r24
+ 11c:	9f 93       	push	r25
+ 11e:	ef 93       	push	r30
+ 120:	ff 93       	push	r31
+	unsigned char tmptail;
+
+	/* Check if all data is transmitted */
+	if (USART_TxHead != USART_TxTail) {
+ 122:	90 91 11 01 	lds	r25, 0x0111
+ 126:	80 91 10 01 	lds	r24, 0x0110
+ 12a:	98 17       	cp	r25, r24
+ 12c:	69 f0       	breq	.+26     	; 0x148 <__vector_19+0x38>
+		/* Calculate buffer index */
+		tmptail = (USART_TxTail + 1) & USART_TX_BUFFER_MASK;
+ 12e:	e0 91 10 01 	lds	r30, 0x0110
+ 132:	ef 5f       	subi	r30, 0xFF	; 255
+ 134:	ef 77       	andi	r30, 0x7F	; 127
+		/* Store new index */
+		USART_TxTail = tmptail;      
+ 136:	e0 93 10 01 	sts	0x0110, r30
+		/* Start transmission */
+		UDR0 = USART_TxBuf[tmptail];  
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	ee 5e       	subi	r30, 0xEE	; 238
+ 13e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 140:	80 81       	ld	r24, Z
+ 142:	80 93 c6 00 	sts	0x00C6, r24
+ 146:	05 c0       	rjmp	.+10     	; 0x152 <__vector_19+0x42>
+	} else {       
+		/* Disable UDRE interrupt */
+		UCSR0B &= ~(1<<UDRIE0);         
+ 148:	e1 ec       	ldi	r30, 0xC1	; 193
+ 14a:	f0 e0       	ldi	r31, 0x00	; 0
+ 14c:	80 81       	ld	r24, Z
+ 14e:	8f 7d       	andi	r24, 0xDF	; 223
+ 150:	80 83       	st	Z, r24
+	}
+}
+ 152:	ff 91       	pop	r31
+ 154:	ef 91       	pop	r30
+ 156:	9f 91       	pop	r25
+ 158:	8f 91       	pop	r24
+ 15a:	0f 90       	pop	r0
+ 15c:	0f be       	out	0x3f, r0	; 63
+ 15e:	0f 90       	pop	r0
+ 160:	1f 90       	pop	r1
+ 162:	18 95       	reti
+
+00000164 <USART0_Transmit>:
+void USART0_Transmit(unsigned char data)
+{
+	unsigned char tmphead;
+	
+	/* Calculate buffer index */
+	tmphead = (USART_TxHead + 1) & USART_TX_BUFFER_MASK;
+ 164:	20 91 11 01 	lds	r18, 0x0111
+ 168:	2f 5f       	subi	r18, 0xFF	; 255
+ 16a:	2f 77       	andi	r18, 0x7F	; 127
+	/* Wait for free space in buffer */
+	while (tmphead == USART_TxTail);
+ 16c:	90 91 10 01 	lds	r25, 0x0110
+ 170:	29 17       	cp	r18, r25
+ 172:	e1 f3       	breq	.-8      	; 0x16c <USART0_Transmit+0x8>
+	/* Store data in buffer */
+	USART_TxBuf[tmphead] = data;
+ 174:	e2 2f       	mov	r30, r18
+ 176:	f0 e0       	ldi	r31, 0x00	; 0
+ 178:	ee 5e       	subi	r30, 0xEE	; 238
+ 17a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 17c:	80 83       	st	Z, r24
+	/* Store new index */
+	USART_TxHead = tmphead;               
+ 17e:	20 93 11 01 	sts	0x0111, r18
+	/* Enable UDRE interrupt */
+	UCSR0B |= (1<<UDRIE0);                    
+ 182:	e1 ec       	ldi	r30, 0xC1	; 193
+ 184:	f0 e0       	ldi	r31, 0x00	; 0
+ 186:	80 81       	ld	r24, Z
+ 188:	80 62       	ori	r24, 0x20	; 32
+ 18a:	80 83       	st	Z, r24
+ 18c:	08 95       	ret
+
+0000018e <USART_putstring>:
+}
+
+void USART_putstring(char* StringPtr)
+{
+ 18e:	cf 93       	push	r28
+ 190:	df 93       	push	r29
+ 192:	ec 01       	movw	r28, r24
+	/* Here we check if there is still more chars to send, this is done checking the actual char and see if it is different from the null char */
+	while(*StringPtr != 0x00)
+ 194:	88 81       	ld	r24, Y
+ 196:	88 23       	and	r24, r24
+ 198:	31 f0       	breq	.+12     	; 0x1a6 <USART_putstring+0x18>
+ 19a:	21 96       	adiw	r28, 0x01	; 1
+	{
+		/* Using the simple send function we send one char at a time */
+		USART0_Transmit(*StringPtr);
+ 19c:	0e 94 b2 00 	call	0x164	; 0x164 <USART0_Transmit>
+}
+
+void USART_putstring(char* StringPtr)
+{
+	/* Here we check if there is still more chars to send, this is done checking the actual char and see if it is different from the null char */
+	while(*StringPtr != 0x00)
+ 1a0:	89 91       	ld	r24, Y+
+ 1a2:	81 11       	cpse	r24, r1
+ 1a4:	fb cf       	rjmp	.-10     	; 0x19c <USART_putstring+0xe>
+		USART0_Transmit(*StringPtr);
+		/* We increment the pointer so we can read the next char */
+		StringPtr++;
+	}
+	
+ 1a6:	df 91       	pop	r29
+ 1a8:	cf 91       	pop	r28
+ 1aa:	08 95       	ret
+
+000001ac <main>:
+char String[]="Hello world!!\n\r";
+
+int main(void)
+{
+	/* Calculate baudrate */
+	USART0_Init(MYUBBR);
+ 1ac:	87 e6       	ldi	r24, 0x67	; 103
+ 1ae:	90 e0       	ldi	r25, 0x00	; 0
+ 1b0:	0e 94 53 00 	call	0xa6	; 0xa6 <USART0_Init>
+	/* Enable global interrupts */
+	sei();
+ 1b4:	78 94       	sei
+	
+    while(1)
+    {
+		/* Echo the received character  */
+		//USART0_Transmit(USART0_Receive());
+		USART_putstring(String);
+ 1b6:	80 e0       	ldi	r24, 0x00	; 0
+ 1b8:	91 e0       	ldi	r25, 0x01	; 1
+ 1ba:	0e 94 c7 00 	call	0x18e	; 0x18e <USART_putstring>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1be:	2f ef       	ldi	r18, 0xFF	; 255
+ 1c0:	87 ea       	ldi	r24, 0xA7	; 167
+ 1c2:	91 e6       	ldi	r25, 0x61	; 97
+ 1c4:	21 50       	subi	r18, 0x01	; 1
+ 1c6:	80 40       	sbci	r24, 0x00	; 0
+ 1c8:	90 40       	sbci	r25, 0x00	; 0
+ 1ca:	e1 f7       	brne	.-8      	; 0x1c4 <main+0x18>
+ 1cc:	00 c0       	rjmp	.+0      	; 0x1ce <main+0x22>
+ 1ce:	00 00       	nop
+ 1d0:	f2 cf       	rjmp	.-28     	; 0x1b6 <main+0xa>
+
+000001d2 <_exit>:
+ 1d2:	f8 94       	cli
+
+000001d4 <__stop_program>:
+ 1d4:	ff cf       	rjmp	.-2      	; 0x1d4 <__stop_program>
