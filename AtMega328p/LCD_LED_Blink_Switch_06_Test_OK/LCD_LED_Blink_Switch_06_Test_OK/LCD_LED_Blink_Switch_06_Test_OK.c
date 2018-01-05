@@ -12,8 +12,8 @@
 
 #include "LCD/lcd.h"
 
-#define LED PE4
-#define SWITCH PB6
+#define LED (1 << PE4)
+#define SWITCH (1 << PB6)
 
 void timer1_init()
 {
@@ -30,22 +30,22 @@ int main(void)
 	/* Timer1 initialization */
 	timer1_init();
 	/* Set Pin E4 as output */
-	DDRE |= (1 << LED);
+	DDRE |= LED;
 	/* Set Pin B6 as input */
-	DDRB &= ~(1 << SWITCH);
+	DDRB &= ~SWITCH;
 	/* Clear screen before entering the infinite loop */
 	lcd_clrscr();
     while(1)
     {
 		/* When the switch is active, the LED blinks with 0.6 seconds delay */
-        if(PINB & (1 << SWITCH))
+        if(PINB & SWITCH)
 		{
 			/* Value based on the formula Target Timer Count = (Input Frequency / (Prescaler * Target Frequency)) - 1 */
 			if(TCNT1 >= 37649)
 			{
-				PORTE ^= (1 << LED);
+				PORTE ^= LED;
 				/* When the Pin E4 is High (LED On), display the message on the LCD */
-				if(!(PINE & (1 << LED)))
+				if(!(PINE & LED))
 				{
 					lcd_home();
 					lcd_puts("LED On! ");
@@ -63,7 +63,7 @@ int main(void)
 		/* When the switch is not active, the LED is Off and the message is displayed on the LCD */
 		else
 		{
-			PORTE &= ~(1 << LED);
+			PORTE &= ~LED;
 			lcd_home();
 			lcd_puts("Closed!");
 		}
