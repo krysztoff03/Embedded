@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ADC_Servox2_Test_OK", "ADC_Servox2_Test_OK\ADC_Servox2_Test_OK.cproj", "{A87F4242-55BB-4A83-8850-748A3EC9E730}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87F4242-55BB-4A83-8850-748A3EC9E730}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A87F4242-55BB-4A83-8850-748A3EC9E730}.Debug|AVR.Build.0 = Debug|AVR
+		{A87F4242-55BB-4A83-8850-748A3EC9E730}.Release|AVR.ActiveCfg = Release|AVR
+		{A87F4242-55BB-4A83-8850-748A3EC9E730}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
