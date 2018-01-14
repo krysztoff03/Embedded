@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "CAN_Bus_Slave_FINAL", "CAN_Bus_Slave_FINAL\CAN_Bus_Slave_FINAL.cproj", "{F0A7CFB4-F653-4D80-BF1B-C04A9490E9F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0A7CFB4-F653-4D80-BF1B-C04A9490E9F8}.Debug|AVR.ActiveCfg = Debug|AVR
+		{F0A7CFB4-F653-4D80-BF1B-C04A9490E9F8}.Debug|AVR.Build.0 = Debug|AVR
+		{F0A7CFB4-F653-4D80-BF1B-C04A9490E9F8}.Release|AVR.ActiveCfg = Release|AVR
+		{F0A7CFB4-F653-4D80-BF1B-C04A9490E9F8}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
