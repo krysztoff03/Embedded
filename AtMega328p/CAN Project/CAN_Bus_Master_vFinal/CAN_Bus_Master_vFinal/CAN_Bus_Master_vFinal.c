@@ -5,6 +5,8 @@
  *  Author: Cristi
  */ 
 
+https://www.youtube.com/watch?v=tUa5lAtXaJM
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
