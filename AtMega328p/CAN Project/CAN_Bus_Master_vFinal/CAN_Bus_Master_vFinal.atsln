@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "CAN_Bus_Master_vFinal", "CAN_Bus_Master_vFinal\CAN_Bus_Master_vFinal.cproj", "{82C31095-5187-41C0-A905-A3C740C0ADB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82C31095-5187-41C0-A905-A3C740C0ADB0}.Debug|AVR.ActiveCfg = Debug|AVR
+		{82C31095-5187-41C0-A905-A3C740C0ADB0}.Debug|AVR.Build.0 = Debug|AVR
+		{82C31095-5187-41C0-A905-A3C740C0ADB0}.Release|AVR.ActiveCfg = Release|AVR
+		{82C31095-5187-41C0-A905-A3C740C0ADB0}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
