@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Timer0_CTC_Mode_Test_OK", "Timer0_CTC_Mode_Test_OK\Timer0_CTC_Mode_Test_OK.cproj", "{0860589F-FA3D-4C01-A7F9-F72FBFD56D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0860589F-FA3D-4C01-A7F9-F72FBFD56D6E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{0860589F-FA3D-4C01-A7F9-F72FBFD56D6E}.Debug|AVR.Build.0 = Debug|AVR
+		{0860589F-FA3D-4C01-A7F9-F72FBFD56D6E}.Release|AVR.ActiveCfg = Release|AVR
+		{0860589F-FA3D-4C01-A7F9-F72FBFD56D6E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
